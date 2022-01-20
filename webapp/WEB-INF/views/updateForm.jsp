@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>[PhoneBook2]</h1>
+	<h1>[PhoneBook3]</h1>
 	
 	<p>
 		수정 화면입니다. 아래 항목을 수정하고 "수정"버튼을 클릭하세요

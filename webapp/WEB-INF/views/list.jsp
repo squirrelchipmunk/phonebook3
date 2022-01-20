@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>[phonebook2]</h1>
+<h1>[phonebook3]</h1>
 	<h2>전화번호 리스트</h2>
 	
 	<p>입력한 정보 내역입니다.</p>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>[PhoneBook2]</h1>
+	<h1>[PhoneBook3]</h1>
 	<h2>전화번호 등록폼</h2>
 	
 	<p>

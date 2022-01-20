@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute; // vo가 있을 때 사용
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +20,7 @@ public class PhoneController {
 	@RequestMapping(value="/writeForm", method= {RequestMethod.GET, RequestMethod.POST})
 	public String writeForm(){
 		System.out.println("PhoneController > writeForm()");
-		return "/WEB-INF/views/writeForm.jsp";
+		return "writeForm";
 	}
 	
 	
@@ -52,6 +53,30 @@ public class PhoneController {
 	}
 	*/
 	
+	/*
+	@RequestMapping(value="/test", method= {RequestMethod.GET, RequestMethod.POST})
+	public String add( @RequestParam( value = "age", required=false, defaultValue="-1") int age,
+			@RequestParam("name") String name) {
+		
+		System.out.println(name);
+		System.out.println(age);
+		
+		return "/WEB-INF/views/writeForm.jsp";
+	}
+	*/
+	
+	
+	@RequestMapping(value="/test/{no}/{num}", method= {RequestMethod.GET, RequestMethod.POST})
+	public String add( @PathVariable("no") int no,
+						@PathVariable("num") int num) {
+		
+		System.out.println(no);
+		System.out.println(num);
+		
+		return "writeForm";
+	}
+	
+	
 	@RequestMapping(value="/list", method= {RequestMethod.GET, RequestMethod.POST})
 	public String list(Model model){
 		System.out.println("PhoneController > list()");
@@ -61,7 +86,7 @@ public class PhoneController {
 		System.out.println(personList);
 		
 		model.addAttribute("pList", personList); // DipatcherServlet이 request attribute에 넣어준다
-		return "/WEB-INF/views/list.jsp";
+		return "list";
 	}
 	
 	@RequestMapping(value="/updateForm", method= {RequestMethod.GET, RequestMethod.POST})
@@ -71,7 +96,7 @@ public class PhoneController {
 		PersonVo personVo = new PhoneDao().getPerson(personId);
 		model.addAttribute("pVo",personVo);
 		
-		return "/WEB-INF/views/updateForm.jsp";
+		return "updateForm";
 	}
 	
 	@RequestMapping(value="/update", method= {RequestMethod.GET, RequestMethod.POST})
@@ -88,5 +113,11 @@ public class PhoneController {
 		return "redirect:/phone/list";
 	}
 	
+
 	
 }
+	
+	
+	
+	
+
